@@ -16,7 +16,7 @@ c. run_word2: returns the fourth letter if the third letter is guessed correctly
 d. run_word3: TBA <br>
     <ol>i. the fourth letter, the word, and the length of the word (in a separate branch)<br></ol>
 <p>
-<i>#2 PYTEST FILE:</i><br>
+<i><mark>#2 PYTEST FILE:</mark></i><br>
 a. Checks if the game selects a word from the correct list.<br>
 b. Checks if guesses are processed correctly (correct vs. incorrect guesses)<br>
 
