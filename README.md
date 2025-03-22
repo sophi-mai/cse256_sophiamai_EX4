@@ -8,5 +8,5 @@ d. <i>run_word3()</i>: TBA
 
 # VERSION TWO
 <b>GUESS THE WORD GAME:</b><br> 
-a. <i>@retry</i>: a global/decorator function. Handles incorrect guesses from by_letter(). 
+a. <i>@retry</i>: a global/decorator function. Handles incorrect guesses from by_letter(). <br>
 b. <i>by_letter():</i> selects a word from the list, returns a congratulatory message if the whole word is guessed, sends a failed message to global/decorator if any letter is guessed incorrectly. (pushed in repository "GitProject") 
