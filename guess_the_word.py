@@ -4,7 +4,7 @@
 # The program selects a random word from a predefined list.
 # The user guesses one letter at a time.
 # If the guessed letter is in the word, it is revealed; otherwise, the program indicates the guess is incorrect.
-# The game continues until the user correctly guesses the entire word or runs out of attempts.
+# TODO: The game continues until the user correctly guesses the entire word or runs out of attempts.
 # Display a congratulatory message when the word is guessed.
 
 
@@ -16,40 +16,35 @@ def list_to_str(listin):
     to_str = [x for x in wordlist[randindx]]
     return to_str
 
-current_word = list_to_str(wordlist)
-
-def run_word(word):
-    print(word[0])
-    x = input("Guess the next letter: ")
+def run_word(word, x): # x signifies the first guess
+    lenword = len(word)
+    # print(word[0])
+    # x = input("Guess the next letter: ")
     if x == word[1]:
-        print(''.join(word[0:2]))
-        for each in word[2:]:
-            a = input("Guess the next letter: ")
-            if a == each:
-                print(''.join(word[0:(word.index(each)+1)]))
-                continue
-            else:
-                print("Oh no! That's not right.. try again")
-                return "FailedGuess"
-        return "Nice!"
+        return word, lenword
     else:
-        print("Oh no! That's not right.. try again")
-        return "FailedGuess"
+        return "Oh no!"
 
-run_word_output = run_word(current_word)
-
-def run_t(word_itr):
-    if word_itr == "FailedGuess":
-        return "Rerun"
+def run_word2(runword):
+    # a) print(word[0:2])
+    # b) x = input("Guess the next letter: ")
+    word, length = runword
+    x = word[2]  # (a, b), the second guess was correct
+    if length == 3:
+        return ("Nice!")
     else:
-        return "Nice!"
+        y = word[3] #return the next letter
+        if x == word[2]:
+            return y, word
+        else:
+            return "Oh no! That's not right... let's try again"
 
-# run_t(run_word_output)
+# run_word2(run_word(list_to_str(wordlist))) -->
 
-def rerun(inbound):
-    if inbound == "Rerun":
-        print("Reset Variable: current_word")
+def run_word3(x, word, y):
+    z = ( word.index(y) + 1 )
+    if x == word[z]:
+        # return "Nice!"
+        return z
     else:
-        print("Nice! You guessed the word!")
-
-rerun(run_t(run_word_output))
+        return "Oh no! That's not right... let's try again"
